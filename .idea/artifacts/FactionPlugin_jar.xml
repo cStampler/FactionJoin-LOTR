@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="FactionPlugin:jar">
+    <output-path>$USER_HOME$/Desktop/LOTRMOD 1.16/plugins</output-path>
+    <root id="archive" name="FactionPlugin.jar">
+      <element id="module-output" name="ArtifactPlugin" />
+    </root>
+  </artifact>
+</component>

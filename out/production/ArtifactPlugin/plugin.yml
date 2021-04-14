@@ -1,0 +1,36 @@
+name: FactionPlugin
+version: 2.0
+author: stampler
+main: me.stampler.core.Core
+permissions:
+description: >
+  Core Plugin for LOTR 1.16.5
+commands:
+  discord:
+    description: Showcases Discord Link
+  online:
+    description: Shows Online Players
+  info:
+    description: Gives info about commands
+  mordor:
+    description: mordor fac
+  factions:
+    description: list factions
+  hobbits:
+    description: hobbit faction
+  bree:
+    description: bree faction
+  bluemount:
+    description: blue-mountains faction
+  highelves:
+    description: high-elves faction
+  rangers:
+    description: ranger faction
+  joinhobbits:
+    description: join hobbits
+  joinhighelves:
+    description: join high-elves
+  joinbluemount:
+    description: join blue-mountains
+  joinbree:
+    description: join bree
