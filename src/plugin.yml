@@ -14,5 +14,15 @@ commands:
     description: Gives info about commands
   dwarvesafter:
     description: After Dwarves GUI
+  orcsafter:
+    description: After Orcs GUI
+  menafter:
+    description: After Men GUI
+  elvesafter:
+    description: After Men GUI
+  evilmenafter:
+    description: After Evil-Men GUI
+  creaturesafter:
+    description: After Creatures GUI
   factions:
     description: Opens Faction GUI
