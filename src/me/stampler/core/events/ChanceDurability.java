@@ -17,8 +17,8 @@ public class ChanceDurability implements Listener {
         ItemStack test = player.getItemInHand();
         Random rand = new Random();
         int number = rand.nextInt(100) + 1;
-        if(number >= 10) {
-            player.sendMessage(ChatColor.LIGHT_PURPLE + "Eru Ilúvatar" + ChatColor.GRAY + " has blessed and repaired ur weapon.");
+        if(number >= 99) {
+            player.sendMessage(ChatColor.LIGHT_PURPLE + "Eru Ilúvatar" + ChatColor.GRAY + " has blessed you and repaired your weapon.");
             test.setDurability(((short)0));
 
     }

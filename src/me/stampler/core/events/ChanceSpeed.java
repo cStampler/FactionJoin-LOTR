@@ -19,7 +19,7 @@ public class ChanceSpeed implements Listener {
         Random rand = new Random();
         int number = rand.nextInt(100) + 1;
         if(number >= 99) {
-            player.sendMessage(ChatColor.LIGHT_PURPLE + "Eru Ilúvatar" + ChatColor.GRAY + " has blessed u with a sudden rush of speed.");
+            player.sendMessage(ChatColor.LIGHT_PURPLE + "Eru Ilúvatar" + ChatColor.GRAY + " has blessed you with a sudden rush of speed.");
             player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 5,10));
         }
     }
