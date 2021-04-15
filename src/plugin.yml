@@ -1,10 +1,9 @@
-name: FactionPlugin
+name: ANewAgeUtilities
 version: 2.0
 author: stampler
 main: me.stampler.core.Core
-permissions:
 description: >
-  Core Plugin for LOTR 1.16.5
+  Utility Plugin for A New Age.
 commands:
   discord:
     description: Showcases Discord Link

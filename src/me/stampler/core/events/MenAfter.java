@@ -23,7 +23,7 @@ public class MenAfter implements Listener {
                 p.playSound(p.getLocation(), Sound.BLOCK_PORTAL_TRAVEL, 0.3F, 8.0F);
                 Bukkit.broadcastMessage(StringUtils.repeat(" \n", 5));
                 Bukkit.broadcastMessage(p.getName() + " has joined" + ChatColor.GOLD + "" + ChatColor.BOLD +  " Rohan");
-                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "execute in lotr:middle_earth run tp " + p.getName() + " 40779 73 49334");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "execute in lotr:middle_earth run tp " + p.getName() + " 40779 79 49334");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent clear");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent add rohan");
                 p.closeInventory();
@@ -57,6 +57,14 @@ public class MenAfter implements Listener {
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "execute in lotr:middle_earth run tp " + p.getName() + " 37560 71 3683");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent clear");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent add dunedain");
+                p.closeInventory();
+            }else if (e.getCurrentItem().getType().equals(Material.SNOW_BLOCK)){
+                p.playSound(p.getLocation(), Sound.BLOCK_PORTAL_TRAVEL, 0.3F, 8.0F);
+                Bukkit.broadcastMessage(StringUtils.repeat(" \n", 5));
+                Bukkit.broadcastMessage(p.getName() + " has joined" + ChatColor.WHITE + "" + ChatColor.BOLD +  " Lossoth");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "execute in lotr:middle_earth run tp " + p.getName() + " -3050 72 -43543");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent clear");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent add lossoth");
                 p.closeInventory();
             }else if (e.getCurrentItem().getType().equals(Material.IRON_DOOR)){
                 p.performCommand("factions");

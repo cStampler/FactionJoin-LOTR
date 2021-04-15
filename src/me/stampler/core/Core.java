@@ -13,6 +13,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.security.Permission;
 import java.util.ArrayList;
 
 public class Core extends JavaPlugin {
@@ -28,6 +29,8 @@ public class Core extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new EvilMenAfter(), this);
         getServer().getPluginManager().registerEvents(new OrcsAfter(), this);
         getServer().getPluginManager().registerEvents(new CreaturesAfter(), this);
+        getServer().getPluginManager().registerEvents(new Welcomer(), this);
+        getServer().getPluginManager().registerEvents(new Leaver(), this);
     }
 
 
@@ -46,18 +49,19 @@ public class Core extends JavaPlugin {
             if (cmd.getName().equalsIgnoreCase("info")) {
                 player.sendMessage(ChatColor.YELLOW + "                       Commands                       ");
                 player.sendMessage(ChatColor.GREEN +  " /discord ⎯ displays discord command");
-                player.sendMessage(ChatColor.GREEN +  " /faction ⎯ displays ur faction");
                 player.sendMessage(ChatColor.GREEN +  " /factions ⎯ displays all factions");
-                player.sendMessage(ChatColor.GREEN +  " /role ⎯ shows u all the roles");
+                player.sendMessage(ChatColor.GREEN +  " /spawn ⎯ brings u to spawn");
                 player.sendMessage(ChatColor.GREEN +  " /online ⎯ shows u the online players");
-                player.sendMessage(ChatColor.GREEN +  " /pouch ⎯ opens up ur e-pouch");
-                player.sendMessage(ChatColor.YELLOW + "∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎");
 
 
 
-            } else if (cmd.getName().equalsIgnoreCase("discord")) {
-                player.sendMessage(ChatColor.YELLOW +  "Our discord link is:" + ChatColor.GREEN + "https://discord.gg/hMSFptArrQ");
-
+            }
+                else if (cmd.getName().equalsIgnoreCase("discord")) {
+                player.sendMessage(ChatColor.YELLOW +  "Our discord link is:" + ChatColor.GREEN + " https://discord.gg/hMSFptArrQ");
+            }
+            else if (cmd.getName().equalsIgnoreCase("spawn")) {
+                player.sendMessage(ChatColor.WHITE + "U have been brought to spawn.");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "execute in lotr:middle_earth run tp " + player.getName() + " 49710 70 21031");
             }
             else if (cmd.getName().equalsIgnoreCase("factions")) {
                 //Options
@@ -228,6 +232,7 @@ public class Core extends JavaPlugin {
                 ItemStack gondor = new ItemStack(Material.WHITE_BANNER, 1);
                 ItemStack rangers = new ItemStack(Material.GRAY_BANNER, 1);
                 ItemStack taurethrim = new ItemStack(Material.GREEN_BANNER, 1);
+                ItemStack lossoth = new ItemStack(Material.SNOW_BLOCK, 1);
                 ItemStack back = new ItemStack(Material.IRON_DOOR, 1);
                 ItemStack hobbits = new ItemStack(Material.BLUE_BANNER, 1);
 
@@ -274,6 +279,13 @@ public class Core extends JavaPlugin {
                 hobbitmeta.setLore(hobbitlore);
                 hobbits.setItemMeta(hobbitmeta);
 
+                ItemMeta lossothmeta = lossoth.getItemMeta();
+                lossothmeta.setDisplayName(ChatColor.WHITE + "Lossoth");
+                ArrayList<String> lossothlore = new ArrayList<>();
+                lossothlore.add(ChatColor.WHITE + "The Snow Men of Forochel");
+                lossothmeta.setLore(lossothlore);
+                lossoth.setItemMeta(lossothmeta);
+
 
 
 
@@ -283,7 +295,7 @@ public class Core extends JavaPlugin {
 
 
                 ItemStack[] menu_items = {glass1,glass2,glass3,glass1,glass3,glass2,glass1, glass3,glass2,glass1,rohan,glass2,gondor,
-                        glass1,rangers,glass3,taurethrim,glass3,hobbits,glass1,glass3,glass2,glass1,glass2,glass3,glass1,back};
+                        glass1,rangers,glass3,taurethrim,glass3,hobbits,glass1,lossoth,glass2,glass1,glass2,glass3,glass1,back};
                 menafter.setContents(menu_items);
 
                 player.openInventory(menafter);
