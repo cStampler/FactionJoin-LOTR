@@ -31,6 +31,9 @@ public class Core extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new CreaturesAfter(), this);
         getServer().getPluginManager().registerEvents(new Welcomer(), this);
         getServer().getPluginManager().registerEvents(new Leaver(), this);
+        getServer().getPluginManager().registerEvents(new ChanceEat(), this);
+        getServer().getPluginManager().registerEvents(new ChanceSpeed(), this);
+        getServer().getPluginManager().registerEvents(new ChanceDurability(), this);
     }
 
 
