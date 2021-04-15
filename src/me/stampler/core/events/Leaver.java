@@ -11,7 +11,7 @@ public class Leaver implements Listener {
     @EventHandler
     void onPlayerLeave(PlayerQuitEvent ev){
         Player player = ev.getPlayer();
-        ev.setQuitMessage(ChatColor.RED + "[" + ChatColor.LIGHT_PURPLE + "A" + ChatColor.GOLD + "N" + ChatColor.LIGHT_PURPLE + "A" + ChatColor.RED + "]" + ChatColor.AQUA + " " + player.getName() + "has left the server");
+        ev.setQuitMessage(ChatColor.AQUA + " " + player.getName() + "has left the server");
 
 }
 }

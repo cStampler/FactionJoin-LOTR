@@ -14,6 +14,6 @@ public class Welcomer implements Listener {
     @EventHandler
     void onPlayerJoin(PlayerJoinEvent e){
         Player player = e.getPlayer();
-        e.setJoinMessage(ChatColor.LIGHT_PURPLE + "A" + ChatColor.RED + "]" + ChatColor.AQUA + " " + player.getName() + " has joined the server");
+        e.setJoinMessage(ChatColor.AQUA + player.getName() + " has joined the server");
     }
 }
