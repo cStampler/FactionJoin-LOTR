@@ -1,4 +1,4 @@
-package me.stampler.core.events;
+package me.stampler.core.additions;
 
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;

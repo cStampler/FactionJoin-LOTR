@@ -1,4 +1,4 @@
-package me.stampler.core.events;
+package me.stampler.core.additions;
 
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;

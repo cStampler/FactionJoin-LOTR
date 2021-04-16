@@ -1,4 +1,4 @@
-package me.stampler.core.events;
+package me.stampler.core.additions;
 
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
@@ -11,7 +11,7 @@ public class Leaver implements Listener {
     @EventHandler
     void onPlayerLeave(PlayerQuitEvent ev){
         Player player = ev.getPlayer();
-        ev.setQuitMessage(ChatColor.AQUA + " " + player.getName() + "has left the server");
+        ev.setQuitMessage(ChatColor.AQUA + player.getName() + " has left the server");
 
 }
 }

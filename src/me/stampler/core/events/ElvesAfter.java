@@ -25,6 +25,7 @@ public class ElvesAfter implements Listener {
                 Bukkit.broadcastMessage(p.getName() + " has joined" + ChatColor.AQUA + "" + ChatColor.BOLD +  " Lindon");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "execute in lotr:middle_earth run tp " + p.getName() + " -36270 72 -1481");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent clear");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission clear");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent add lindon");
                 p.closeInventory();
             }else if (e.getCurrentItem().getType().equals(Material.PURPLE_BANNER)){
@@ -33,6 +34,7 @@ public class ElvesAfter implements Listener {
                 Bukkit.broadcastMessage(p.getName() + " has joined" + ChatColor.LIGHT_PURPLE + "" + ChatColor.BOLD +  " Dorwinion");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "execute in lotr:middle_earth run tp " + p.getName() + " 124726 70 17091");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent clear");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission clear");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent add dorwinion");
                 p.closeInventory();
             }else if (e.getCurrentItem().getType().equals(Material.YELLOW_BANNER)){
@@ -41,6 +43,7 @@ public class ElvesAfter implements Listener {
                 Bukkit.broadcastMessage(p.getName() + " has joined" + ChatColor.YELLOW + "" + ChatColor.BOLD +  " Lothlórien");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "execute in lotr:middle_earth run tp " + p.getName() + " 49710 70 21031");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent clear");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission clear");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent add lothlorien");
                 p.closeInventory();
             }else if (e.getCurrentItem().getType().equals(Material.LIGHT_BLUE_BANNER)){
@@ -49,6 +52,7 @@ public class ElvesAfter implements Listener {
                 Bukkit.broadcastMessage(p.getName() + " has joined" + ChatColor.AQUA + "" + ChatColor.BOLD +  " Rivendell");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "execute in lotr:middle_earth run tp " + p.getName() + " 47065 69 -1077");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent clear");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission clear");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent add rivendell");
                 p.closeInventory();
             }else if (e.getCurrentItem().getType().equals(Material.GREEN_BANNER)){
@@ -57,6 +61,7 @@ public class ElvesAfter implements Listener {
                 Bukkit.broadcastMessage(p.getName() + " has joined" + ChatColor.GREEN + "" + ChatColor.BOLD +  " Wood-Elves");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "execute in lotr:middle_earth run tp " + p.getName() + " 78143 76 -12348");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent clear");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission clear");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent add woodelves");
                 p.closeInventory();
             }else if (e.getCurrentItem().getType().equals(Material.IRON_DOOR)){

@@ -1,5 +1,6 @@
 package me.stampler.core;
 
+import me.stampler.core.additions.*;
 import me.stampler.core.events.*;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -11,12 +12,15 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.security.Permission;
 import java.util.ArrayList;
 
 public class Core extends JavaPlugin {
+    public Permission heal = new Permission("core.heal");
+    public Permission feed = new Permission("core.feed");
+    public Permission fly = new Permission("core.fly");
 
     public void onDisable() {
     }
@@ -34,6 +38,7 @@ public class Core extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ChanceEat(), this);
         getServer().getPluginManager().registerEvents(new ChanceSpeed(), this);
         getServer().getPluginManager().registerEvents(new ChanceDurability(), this);
+        getServer().getPluginManager().registerEvents(new FirstJoin(), this);
     }
 
 
@@ -63,8 +68,43 @@ public class Core extends JavaPlugin {
                 player.sendMessage(ChatColor.YELLOW +  "Our discord link is:" + ChatColor.GREEN + " https://discord.gg/hMSFptArrQ");
             }
             else if (cmd.getName().equalsIgnoreCase("spawn")) {
-                player.sendMessage(ChatColor.WHITE + "U have been brought to spawn.");
-                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "execute in lotr:middle_earth run tp " + player.getName() + " 49710 70 21031");
+                player.sendMessage(ChatColor.WHITE + "You have been brought to spawn.");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "execute in lotr:middle_earth run tp " + player.getName() + " -92481 70 -4022");
+            }
+            else if (cmd.getName().equalsIgnoreCase("feed") && player.hasPermission(feed)) {
+                player.sendMessage(ChatColor.WHITE + "Your appetite has been sated.");
+                player.setFoodLevel(20);
+            }
+            else if (cmd.getName().equalsIgnoreCase("fly") && player.hasPermission(fly)) {
+                if(args.length == 0){
+                    player.sendMessage(ChatColor.GRAY + "You may now fly.");
+                    player.setAllowFlight(true);
+
+                }
+                else if(args.length == 1){
+                    Player target = Bukkit.getPlayer(args[0]);
+                    target.sendMessage(ChatColor.GRAY + "You may now fly.");
+                    player.sendMessage(ChatColor.GRAY + "Enabled Fly for Player: " + target.getName());
+                    target.setAllowFlight(true);
+                }
+
+            }
+            else if (cmd.getName().equalsIgnoreCase("heal") && player.hasPermission(heal)) {
+                player.sendMessage(ChatColor.WHITE + "You have been healed.");
+                player.setHealth(20);
+            }
+            else if (cmd.getName().equalsIgnoreCase("unfly") && player.hasPermission(fly)) {
+                if(args.length == 0){
+                    player.sendMessage(ChatColor.GRAY + "You may no longer fly.");
+                    player.setAllowFlight(false);
+
+                }
+                else if (args.length == 1){
+                    Player target = Bukkit.getPlayer(args[0]);
+                    target.sendMessage(ChatColor.GRAY + "You may no longer fly.");
+                    player.sendMessage(ChatColor.GRAY + "You Disabled Fly for Player: " + target.getName());
+                    target.setAllowFlight(false);
+                }
             }
             else if (cmd.getName().equalsIgnoreCase("factions")) {
                 //Options

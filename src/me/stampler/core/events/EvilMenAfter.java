@@ -24,6 +24,7 @@ public class EvilMenAfter implements Listener {
                 Bukkit.broadcastMessage(StringUtils.repeat(" \n", 5));
                 Bukkit.broadcastMessage(p.getName() + " has joined" + ChatColor.RED + "" + ChatColor.BOLD +  " Gulfings");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent clear");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission clear");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent add gulfings");
                 p.closeInventory();
             }else if (e.getCurrentItem().getType().equals(Material.YELLOW_BANNER)){
@@ -31,6 +32,7 @@ public class EvilMenAfter implements Listener {
                 Bukkit.broadcastMessage(StringUtils.repeat(" \n", 5));
                 Bukkit.broadcastMessage(p.getName() + " has joined" + ChatColor.YELLOW + "" + ChatColor.BOLD +  " Morwaith");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent clear");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission clear");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent add morwaith");
                 p.closeInventory();
             }else if (e.getCurrentItem().getType().equals(Material.BLACK_BANNER)){
@@ -38,6 +40,7 @@ public class EvilMenAfter implements Listener {
                 Bukkit.broadcastMessage(StringUtils.repeat(" \n", 5));
                 Bukkit.broadcastMessage(p.getName() + " has joined" + ChatColor.DARK_GRAY + "" + ChatColor.BOLD +  " Um" + ChatColor.GOLD + "bar");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent clear");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission clear");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent add umbar");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "execute in lotr:middle_earth run tp " + p.getName() + " 51879 71 122728");
                 p.closeInventory();
@@ -46,6 +49,7 @@ public class EvilMenAfter implements Listener {
                 Bukkit.broadcastMessage(StringUtils.repeat(" \n", 5));
                 Bukkit.broadcastMessage(p.getName() + " has joined" + ChatColor.YELLOW + "" + ChatColor.BOLD +  " Khand");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent clear");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission clear");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent add khand");
                 p.closeInventory();
             }else if (e.getCurrentItem().getType().equals(Material.IRON_DOOR)){

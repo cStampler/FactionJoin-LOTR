@@ -23,6 +23,7 @@ public class DwarvesAfter implements Listener {
                 Bukkit.broadcastMessage(p.getName() + " has joined" + ChatColor.BLUE + "" + ChatColor.BOLD +  " Durin's Folk");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "execute in lotr:middle_earth run tp " + p.getName() + " 99648 71 -15550");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent clear");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission clear");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent add durinsfolk");
                 p.closeInventory();
             }else if (e.getCurrentItem().getType().equals(Material.LIGHT_BLUE_BANNER)){
@@ -31,6 +32,7 @@ public class DwarvesAfter implements Listener {
                 Bukkit.broadcastMessage(p.getName() + " has joined" + ChatColor.DARK_AQUA + "" + ChatColor.BOLD +  " Blue-Mountains");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "execute in lotr:middle_earth run tp " + p.getName() + " -24000 86 -16573");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent clear");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission clear");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent add blue-mountains");
                 p.closeInventory();
 

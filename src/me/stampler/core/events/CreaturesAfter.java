@@ -25,6 +25,7 @@ public class CreaturesAfter implements Listener {
                 Bukkit.broadcastMessage(p.getName() + " has joined" + ChatColor.GREEN + "" + ChatColor.BOLD +  " Fangorn");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "execute in lotr:middle_earth run tp " + p.getName() + " 45251 71 38434");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent clear");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission clear");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent add fangorn");
                 p.closeInventory();
             }else if (e.getCurrentItem().getType().equals(Material.GRAY_BANNER)){
@@ -32,6 +33,7 @@ public class CreaturesAfter implements Listener {
                 Bukkit.broadcastMessage(StringUtils.repeat(" \n", 5));
                 Bukkit.broadcastMessage(p.getName() + " has joined" + ChatColor.DARK_RED + "" + ChatColor.BOLD + " Half-Trolls");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent clear");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission clear");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent add halftrolls");
 
                 p.closeInventory();
