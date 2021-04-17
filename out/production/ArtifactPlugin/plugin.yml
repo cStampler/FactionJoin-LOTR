@@ -14,6 +14,10 @@ commands:
     description: Gives info about commands
   spawn:
     description: tps u to spawn
+  artifacts:
+    description: shows artifacts
+  biometrack:
+    description: track player
   fly:
     description: allows fly
   unfly:

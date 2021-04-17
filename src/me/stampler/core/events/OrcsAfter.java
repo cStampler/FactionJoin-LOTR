@@ -28,7 +28,7 @@ public class OrcsAfter implements Listener {
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission clear");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent add dol-guldur");
                 p.closeInventory();
-            }else if (e.getCurrentItem().getType().equals(Material.BLACK_BANNER)){
+            }else if (e.getCurrentItem().getType().equals(Material.valueOf("LOTR_MORDOR_HELMET"))){
                 p.playSound(p.getLocation(), Sound.BLOCK_PORTAL_TRAVEL, 0.3F, 8.0F);
                 Bukkit.broadcastMessage(StringUtils.repeat(" \n", 5));
                 Bukkit.broadcastMessage(p.getName() + " has joined" + ChatColor.BLACK + "" + ChatColor.BOLD +  " Mordor");
@@ -37,7 +37,7 @@ public class OrcsAfter implements Listener {
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission clear");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent add mordor");
                 p.closeInventory();
-            }else if (e.getCurrentItem().getType().equals(Material.WHITE_BANNER)){
+            }else if (e.getCurrentItem().getType().equals(Material.valueOf("LOTR_URUK_BERSERKER_HELMET"))){
                 p.playSound(p.getLocation(), Sound.BLOCK_PORTAL_TRAVEL, 0.3F, 8.0F);
                 Bukkit.broadcastMessage(StringUtils.repeat(" \n", 5));
                 Bukkit.broadcastMessage(p.getName() + " has joined" + ChatColor.WHITE + "" + ChatColor.BOLD +  " Isen" + ChatColor.DARK_GRAY + "gard");

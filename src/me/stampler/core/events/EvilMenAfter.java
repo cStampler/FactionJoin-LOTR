@@ -25,7 +25,7 @@ public class EvilMenAfter implements Listener {
                 Bukkit.broadcastMessage(p.getName() + " has joined" + ChatColor.RED + "" + ChatColor.BOLD +  " Gulfings");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent clear");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " permission clear");
-                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent add gulfings");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + p.getName() + " parent add gulfing");
                 p.closeInventory();
             }else if (e.getCurrentItem().getType().equals(Material.YELLOW_BANNER)){
                 p.playSound(p.getLocation(), Sound.BLOCK_PORTAL_TRAVEL, 0.3F, 8.0F);

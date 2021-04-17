@@ -16,6 +16,7 @@ import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class Core extends JavaPlugin {
     public Permission heal = new Permission("core.heal");
@@ -26,8 +27,13 @@ public class Core extends JavaPlugin {
     }
 
     public void onEnable() {
+        // Config
+        getConfig().options().copyDefaults();
+        saveDefaultConfig();
+        // Events
         getServer().getPluginManager().registerEvents(new MenuHandler(), this);
         getServer().getPluginManager().registerEvents(new DwarvesAfter(), this);
+        getServer().getPluginManager().registerEvents(new ArtifactAfter(), this);
         getServer().getPluginManager().registerEvents(new ElvesAfter(), this);
         getServer().getPluginManager().registerEvents(new MenAfter(), this);
         getServer().getPluginManager().registerEvents(new EvilMenAfter(), this);
@@ -39,6 +45,7 @@ public class Core extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ChanceSpeed(), this);
         getServer().getPluginManager().registerEvents(new ChanceDurability(), this);
         getServer().getPluginManager().registerEvents(new FirstJoin(), this);
+        getCommand("artifacts").setExecutor(new ArtifactGUI());
     }
 
 
@@ -67,6 +74,7 @@ public class Core extends JavaPlugin {
                 else if (cmd.getName().equalsIgnoreCase("discord")) {
                 player.sendMessage(ChatColor.YELLOW +  "Our discord link is:" + ChatColor.GREEN + " https://discord.gg/hMSFptArrQ");
             }
+
             else if (cmd.getName().equalsIgnoreCase("spawn")) {
                 player.sendMessage(ChatColor.WHITE + "You have been brought to spawn.");
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "execute in lotr:middle_earth run tp " + player.getName() + " -92481 70 -4022");
@@ -208,10 +216,10 @@ public class Core extends JavaPlugin {
             }
             else if (cmd.getName().equalsIgnoreCase("orcsafter")) {
                 //Options
-                ItemStack mordor = new ItemStack(Material.BLACK_BANNER, 1);
+                ItemStack mordor = new ItemStack(Material.valueOf("LOTR_MORDOR_HELMET"), 1);
                 ItemStack dolguldur = new ItemStack(Material.PURPLE_BANNER, 1);
                 ItemStack gundabad = new ItemStack(Material.BROWN_BANNER, 1);
-                ItemStack isengard = new ItemStack(Material.WHITE_BANNER, 1);
+                ItemStack isengard = new ItemStack(Material.valueOf("LOTR_URUK_BERSERKER_HELMET"), 1);
                 ItemStack angmar = new ItemStack(Material.GRAY_BANNER, 1);
                 ItemStack back = new ItemStack(Material.IRON_DOOR, 1);
                 ItemStack glass1 = new ItemStack(Material.GRAY_STAINED_GLASS_PANE,1);
@@ -246,7 +254,7 @@ public class Core extends JavaPlugin {
                 ItemMeta isengardmeta = isengard.getItemMeta();
                 isengardmeta.setDisplayName(ChatColor.WHITE + "Isen" + ChatColor.DARK_GRAY + "gard");
                 ArrayList<String> isengardlore = new ArrayList<>();
-                isengardlore.add(ChatColor.GRAY + "The Orcs of Isengard, commanded by Saruman");
+                isengardlore.add(ChatColor.GRAY + "The Uruk-Hai of Isengard, commanded by Saruman");
                 isengardmeta.setLore(isengardlore);
                 isengard.setItemMeta(isengardmeta);
 
